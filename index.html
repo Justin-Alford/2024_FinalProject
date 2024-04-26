@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-            <title></title>
 
-        <!--put your external stylesheet links here-->
-        <link rel="stylesheet" href="css/style.css">
-        <!--[if IE<9]>
-            <link rel="stylesheet" href="css/style.ie.css">
-        <![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Oregon Landslides</title>
 
-         <!--you can also place internal styles here;
-             place these within <style> tags-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lib/home/leaflet.zoomhome.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-modal">
+            <div class="message">
+                <h1>Oregon Landslides</h1>
+                <p>This map shows the landslide inventory in the state of Oregon from the National Landslide Inventory database created by the USGS.  In addition, this map also shows the major land resource areas (MLRA's) in the state of Oregon created by the USDA / NRCS - National Soil Survey Center.</p>
+                
+                <p>Major land resource areas (MLRA's) are geographically associated land resource units (LRU's). Identification of these large areas is important in statewide agricultural planning and has value in interstate, regional, and national planning.</p>
+                
+                <!-- MAP button -->
+                <button id="close-splash">MAP</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="map-title">
+        <img src="img/Landslide.png" alt="Icon">&nbsp;&nbsp;OREGON LANDSLIDES&nbsp;&nbsp;&nbsp;<img src="img/Landslide.png" alt="Icon">
+    </div>
+
+    <div id="map"></div>
+    
+    <div id="Legend"></div>
+
+    <div class="filters">
+        <label>
+            <br>
+            <input type="checkbox" id="Confidence" checked> Landslide Type
+            <select id="ConfidenceType">
+                <option value="all">All</option>
+                <option value="one">Possible landslide in the area</option>
+                <option value="two">Probable landslide in the area</option>
+                <option value="three">Likely landslide at or near this location</option>
+                <option value="five">Confident consequential landslide at this location</option>
+                <option value="eight">High confidence in extent or nature of landslide</option>
+            </select>
+        </label>
         
-    </head>
+        <label>
+            <br><br>
+            <input type="checkbox" id="MLRA" checked> Major Land Resource Areas
+        </label>
+    </div>
 
-    <body>
-        <!--put your initial page content here-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="js/main.js" defer></script>
+    <script type="text/javascript" src="lib/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="lib/home/leaflet.zoomhome.js"></script>
+    <script type="text/javascript" src="lib/home/leaflet.zoomhome.min.js"></script>
+</body>
 
-        <!--you can also use this space for internal scripts;
-        place these within <script> tags-->
-
-        <!--put your external script links here-->
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="lib/jquery-3.5.1.js"></script>
-    </body>
 </html>
